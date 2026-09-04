@@ -1,0 +1,646 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Siva Prasad | Cloud & DevOps Engineer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #111827;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #263244;
+        }
+
+        .logo {
+            color: #38bdf8;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #e5e7eb;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0b1120, #111827);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            color: #94a3b8;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            font-size: 18px;
+            max-width: 750px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .primary {
+            background: #38bdf8;
+            color: #0b1120;
+        }
+
+        .secondary {
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: #38bdf8;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+        }
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: #111827;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #263244;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .skill h3 {
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: #111827;
+            padding: 28px;
+            border-radius: 10px;
+            border: 1px solid #263244;
+        }
+
+        .project h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #1e293b;
+            color: #7dd3fc;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .architecture {
+            background: #111827;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #263244;
+            text-align: center;
+        }
+
+        .architecture p {
+            color: #cbd5e1;
+            font-size: 17px;
+            margin: 10px 0;
+        }
+
+        .arrow {
+            color: #38bdf8;
+            font-size: 25px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            margin: 10px;
+        }
+
+        .contact a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #111827;
+            text-align: center;
+            padding: 25px;
+            color: #64748b;
+            border-top: 1px solid #263244;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">SIVA.DEVOPS</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#architecture">AWS</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Hi, I'm <span>Siva Prasad</span></h1>
+
+            <h2>Cloud & DevOps Engineer</h2>
+
+            <p>
+                Cloud and DevOps enthusiast focused on building scalable,
+                secure and automated infrastructure using AWS, Docker,
+                Kubernetes, Terraform and CI/CD technologies.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn primary">View Projects</a>
+                <a href="#contact" class="btn secondary">Contact Me</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about">
+
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Cloud • DevOps • Automation • Infrastructure</p>
+        </div>
+
+        <div class="about">
+
+            <p>
+                I am a technology professional with experience in application
+                support and web technologies, currently building hands-on
+                expertise in Cloud and DevOps engineering.
+            </p>
+
+            <br>
+
+            <p>
+                My learning and project work focuses on AWS infrastructure,
+                containerization, Kubernetes, Infrastructure as Code,
+                CI/CD automation, monitoring and Linux administration.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <div class="section-title">
+            <h2>Technical Skills</h2>
+            <p>Technologies I work with and practice</p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill">
+                <h3>AWS</h3>
+                <p>EC2, S3, IAM, VPC, ELB, RDS, CloudWatch, Route 53</p>
+            </div>
+
+            <div class="skill">
+                <h3>Docker</h3>
+                <p>Images, Containers, Dockerfile, Docker Compose</p>
+            </div>
+
+            <div class="skill">
+                <h3>Kubernetes</h3>
+                <p>Pods, Deployments, Services, Ingress, HPA, EKS</p>
+            </div>
+
+            <div class="skill">
+                <h3>Terraform</h3>
+                <p>Infrastructure as Code, State, Modules, AWS Resources</p>
+            </div>
+
+            <div class="skill">
+                <h3>Jenkins</h3>
+                <p>CI/CD pipelines and automated deployments</p>
+            </div>
+
+            <div class="skill">
+                <h3>Git</h3>
+                <p>Git, GitHub, GitLab, Branching and Version Control</p>
+            </div>
+
+            <div class="skill">
+                <h3>Linux</h3>
+                <p>Shell commands, permissions, processes and administration</p>
+            </div>
+
+            <div class="skill">
+                <h3>Monitoring</h3>
+                <p>CloudWatch, Prometheus, Grafana and logging</p>
+            </div>
+
+            <div class="skill">
+                <h3>Python</h3>
+                <p>Automation scripts and DevOps utilities</p>
+            </div>
+
+            <div class="skill">
+                <h3>Bash</h3>
+                <p>Shell scripting and infrastructure automation</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <div class="section-title">
+            <h2>AWS & DevOps Projects</h2>
+            <p>Hands-on cloud and automation projects</p>
+        </div>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>01. AWS E-Commerce Deployment</h3>
+
+                <p>
+                    Designed and deployed an e-commerce application on AWS
+                    using EC2, S3, IAM, VPC and load balancing.
+                    Implemented containerization and CI/CD automation.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">AWS</span>
+                    <span class="tag">EC2</span>
+                    <span class="tag">S3</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Jenkins</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>02. Terraform AWS Infrastructure</h3>
+
+                <p>
+                    Automated AWS infrastructure provisioning using Terraform.
+                    Created reusable infrastructure code for compute,
+                    networking and security resources.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Terraform</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">EC2</span>
+                    <span class="tag">VPC</span>
+                    <span class="tag">IAM</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>03. Kubernetes Application Deployment</h3>
+
+                <p>
+                    Deployed containerized applications using Kubernetes.
+                    Worked with Pods, Deployments, Services, Ingress and
+                    Horizontal Pod Autoscaling.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">EKS</span>
+                    <span class="tag">Ingress</span>
+                    <span class="tag">HPA</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>04. CI/CD Pipeline</h3>
+
+                <p>
+                    Built an automated CI/CD pipeline using GitHub,
+                    Jenkins and Docker to build, test and deploy
+                    application containers.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Jenkins</span>
+                    <span class="tag">GitHub</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">CI/CD</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AWS Architecture -->
+    <section id="architecture">
+
+        <div class="section-title">
+            <h2>AWS Deployment Architecture</h2>
+            <p>Example architecture used for portfolio deployment</p>
+        </div>
+
+        <div class="architecture">
+
+            <p>🌐 User</p>
+
+            <div class="arrow">↓</div>
+
+            <p>☁️ Amazon CloudFront</p>
+
+            <div class="arrow">↓</div>
+
+            <p>🪣 Amazon S3 / EC2</p>
+
+            <div class="arrow">↓</div>
+
+            <p>🐳 Docker Container</p>
+
+            <div class="arrow">↓</div>
+
+            <p>⚙️ Application</p>
+
+            <br>
+
+            <p>
+                Infrastructure can be provisioned using
+                <strong>Terraform</strong> and deployments automated
+                using <strong>Jenkins CI/CD</strong>.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- DevOps Workflow -->
+    <section>
+
+        <div class="section-title">
+            <h2>DevOps Workflow</h2>
+            <p>From source code to deployment</p>
+        </div>
+
+        <div class="architecture">
+
+            <p>👨‍💻 Developer</p>
+
+            <div class="arrow">↓</div>
+
+            <p>GitHub</p>
+
+            <div class="arrow">↓</div>
+
+            <p>Jenkins CI/CD</p>
+
+            <div class="arrow">↓</div>
+
+            <p>Docker Build</p>
+
+            <div class="arrow">↓</div>
+
+            <p>Container Registry</p>
+
+            <div class="arrow">↓</div>
+
+            <p>AWS / Kubernetes</p>
+
+            <div class="arrow">↓</div>
+
+            <p>📊 Monitoring</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <div class="section-title">
+            <h2>Contact Me</h2>
+            <p>Let's connect</p>
+        </div>
+
+        <div class="contact">
+
+            <p>
+                📧 Email:
+                <a href="mailto:your-email@example.com">
+                    your-email@example.com
+                </a>
+            </p>
+
+            <p>
+                💼 LinkedIn:
+                <a href="#" target="_blank">
+                    LinkedIn Profile
+                </a>
+            </p>
+
+            <p>
+                💻 GitHub:
+                <a href="#" target="_blank">
+                    GitHub Profile
+                </a>
+            </p>
+
+            <br>
+
+            <a href="#home" class="btn primary">
+                Back to Top
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Siva Prasad | Cloud & DevOps Engineer
+        </p>
+
+        <p>
+            Built with HTML | Deployed on AWS
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```
