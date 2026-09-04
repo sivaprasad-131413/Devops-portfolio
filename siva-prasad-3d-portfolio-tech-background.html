@@ -257,10 +257,195 @@ footer{padding:28px 7%;text-align:center;color:#64748b;border-top:1px solid #111
     .timeline-item{padding-left:42px}
     .timeline-dot{left:2px}
 }
+
+/* ===== CLOUD / DEVOPS TECHNOLOGY BACKGROUND ===== */
+.tech-background{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(0,190,255,.08), transparent 28%),
+    radial-gradient(circle at 82% 70%, rgba(130,70,255,.08), transparent 30%);
+}
+.tech-background .tech-logo{
+  position:absolute;
+  width:145px;
+  height:145px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:28px;
+  background:rgba(7,12,27,.34);
+  box-shadow:0 0 35px rgba(0,200,255,.08), inset 0 0 25px rgba(255,255,255,.025);
+  backdrop-filter:blur(2px);
+  opacity:.18;
+  filter:drop-shadow(0 0 12px rgba(0,210,255,.16));
+  animation:techFloat 10s ease-in-out infinite;
+}
+.tech-background .tech-logo svg{
+  width:72px;
+  height:72px;
+  overflow:visible;
+}
+.tech-background .tech-logo span{
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:1.4px;
+  color:rgba(235,249,255,.8);
+  text-transform:uppercase;
+}
+.tech-background .aws{left:3%;top:15%;animation-delay:-1s}
+.tech-background .k8s{right:4%;top:11%;animation-delay:-4s}
+.tech-background .terraform{left:6%;top:57%;animation-delay:-7s}
+.tech-background .jenkins{right:6%;top:54%;animation-delay:-2s}
+.tech-background .docker{left:20%;bottom:3%;animation-delay:-5s}
+.tech-background .github{right:20%;bottom:5%;animation-delay:-8s}
+.tech-background .grafana{left:42%;top:9%;animation-delay:-3s}
+.tech-background .prometheus{right:38%;bottom:4%;animation-delay:-6s}
+.tech-background .linux{left:34%;top:55%;animation-delay:-9s}
+.tech-background .python{right:31%;top:45%;animation-delay:-10s}
+
+.tech-background .network-line{
+  position:absolute;
+  height:1px;
+  transform-origin:left center;
+  background:linear-gradient(90deg,transparent,rgba(0,220,255,.24),transparent);
+  opacity:.35;
+  animation:linePulse 5s ease-in-out infinite;
+}
+.tech-background .line1{width:34%;left:12%;top:34%;transform:rotate(12deg)}
+.tech-background .line2{width:30%;left:53%;top:29%;transform:rotate(-15deg)}
+.tech-background .line3{width:37%;left:18%;top:72%;transform:rotate(-8deg)}
+.tech-background .line4{width:31%;left:55%;top:72%;transform:rotate(13deg)}
+
+@keyframes techFloat{
+  0%,100%{transform:translate3d(0,0,0) rotate(-2deg)}
+  50%{transform:translate3d(0,-18px,0) rotate(2deg)}
+}
+@keyframes linePulse{
+  0%,100%{opacity:.12}
+  50%{opacity:.45}
+}
+@media(max-width:900px){
+  .tech-background .tech-logo{width:105px;height:105px;opacity:.12;border-radius:22px}
+  .tech-background .tech-logo svg{width:52px;height:52px}
+  .tech-background .tech-logo span{font-size:10px}
+  .tech-background .grafana,.tech-background .prometheus,.tech-background .linux,.tech-background .python{display:none}
+}
+@media(max-width:600px){
+  .tech-background .tech-logo{width:82px;height:82px;opacity:.09}
+  .tech-background .tech-logo svg{width:40px;height:40px}
+  .tech-background .tech-logo span{font-size:8px}
+  .tech-background .aws{left:-4%;top:17%}
+  .tech-background .k8s{right:-4%;top:16%}
+  .tech-background .terraform{left:-5%;top:61%}
+  .tech-background .jenkins{right:-5%;top:60%}
+  .tech-background .docker{left:8%;bottom:4%}
+  .tech-background .github{right:8%;bottom:5%}
+}
+
+
+/* Keep all portfolio content above the technology background */
+body > *:not(.tech-background){position:relative;z-index:1;}
+
 </style>
 </head>
 
 <body>
+<div class="tech-background" aria-hidden="true">
+  <div class="network-line line1"></div><div class="network-line line2"></div>
+  <div class="network-line line3"></div><div class="network-line line4"></div>
+
+  <div class="tech-logo aws">
+    <svg viewBox="0 0 100 100">
+      <path d="M16 59c9-17 20-25 35-25 15 0 25 7 34 21" fill="none" stroke="#ff9900" stroke-width="8" stroke-linecap="round"/>
+      <path d="M20 66c18 9 39 12 61 4" fill="none" stroke="#ff9900" stroke-width="7" stroke-linecap="round"/>
+      <text x="50" y="53" text-anchor="middle" font-size="25" font-weight="900" fill="#fff">AWS</text>
+    </svg><span>AWS Cloud</span>
+  </div>
+
+  <div class="tech-logo k8s">
+    <svg viewBox="0 0 100 100">
+      <path d="M50 7 86 28v44L50 93 14 72V28Z" fill="none" stroke="#326ce5" stroke-width="6"/>
+      <circle cx="50" cy="50" r="17" fill="none" stroke="#7fb0ff" stroke-width="5"/>
+      <path d="M50 12v21M83 31 64 42M83 69 64 58M50 88V67M17 69l19-11M17 31l19 11" stroke="#7fb0ff" stroke-width="4"/>
+    </svg><span>Kubernetes</span>
+  </div>
+
+  <div class="tech-logo terraform">
+    <svg viewBox="0 0 100 100">
+      <path d="M13 23 38 37v28L13 51Zm28 16 25 14v28L41 67Zm28-16 25 14v28L69 51Z" fill="#7b42bc"/>
+      <path d="M41 9 66 23 41 37Z" fill="#a06bd0"/>
+    </svg><span>Terraform</span>
+  </div>
+
+  <div class="tech-logo jenkins">
+    <svg viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="38" fill="#d7d9dc" stroke="#fff" stroke-width="3"/>
+      <circle cx="39" cy="43" r="5" fill="#222"/>
+      <circle cx="61" cy="43" r="5" fill="#222"/>
+      <path d="M34 58q16 13 32 0" fill="none" stroke="#222" stroke-width="5" stroke-linecap="round"/>
+      <path d="M28 27 18 14M72 27 82 14" stroke="#f4b400" stroke-width="7" stroke-linecap="round"/>
+    </svg><span>Jenkins</span>
+  </div>
+
+  <div class="tech-logo docker">
+    <svg viewBox="0 0 100 100">
+      <g fill="#2496ed">
+        <rect x="12" y="43" width="14" height="13" rx="2"/><rect x="28" y="43" width="14" height="13" rx="2"/>
+        <rect x="44" y="43" width="14" height="13" rx="2"/><rect x="28" y="28" width="14" height="13" rx="2"/>
+        <rect x="44" y="28" width="14" height="13" rx="2"/><rect x="60" y="43" width="14" height="13" rx="2"/>
+        <path d="M18 59c8 16 34 20 51 8 6-4 10-9 12-16H63c-10 7-26 9-45 8Z"/>
+      </g>
+    </svg><span>Docker</span>
+  </div>
+
+  <div class="tech-logo github">
+    <svg viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="39" fill="#f4f4f4"/>
+      <path d="M50 22c-17 0-30 13-30 30 0 13 8 24 20 28 2 .4 3-1 3-2v-8c-8 2-10-4-10-4-2-4-4-5-4-5-3-2 .2-2 .2-2 4 0 6 4 6 4 3 5 7 3 9 2 .3-2 1-3 2-4-6-1-12-3-12-14 0-3 1-5 3-7-.3-1-1-4 .3-7 0 0 2-1 7 3 2-1 5-1 8-1s6 0 8 1c5-4 7-3 7-3 1 3 .6 6 .3 7 2 2 3 4 3 7 0 11-7 13-13 14 1 1 2 3 2 6v8c0 1 1 2 3 2 12-4 20-15 20-28 0-17-13-30-30-30Z" fill="#171717"/>
+    </svg><span>GitHub</span>
+  </div>
+
+  <div class="tech-logo grafana">
+    <svg viewBox="0 0 100 100">
+      <path d="M72 73c-9 11-26 12-38 3-12-9-15-26-7-39 7-12 23-18 37-12" fill="none" stroke="#f2f2f2" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="63" cy="39" r="7" fill="#f2f2f2"/><circle cx="48" cy="67" r="7" fill="#f2f2f2"/>
+      <path d="M70 25c10 1 17 7 20 15" fill="none" stroke="#ff6f00" stroke-width="6" stroke-linecap="round"/>
+    </svg><span>Grafana</span>
+  </div>
+
+  <div class="tech-logo prometheus">
+    <svg viewBox="0 0 100 100">
+      <path d="M50 13c10 13 20 19 20 34 0 13-8 25-20 25S30 60 30 47c0-15 10-21 20-34Z" fill="#e6522c"/>
+      <path d="M28 76h44" stroke="#ff7653" stroke-width="7" stroke-linecap="round"/>
+      <path d="M35 84h30" stroke="#ff7653" stroke-width="5" stroke-linecap="round"/>
+    </svg><span>Prometheus</span>
+  </div>
+
+  <div class="tech-logo linux">
+    <svg viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="39" fill="#f2f2f2"/>
+      <ellipse cx="51" cy="61" rx="19" ry="15" fill="#222"/>
+      <circle cx="43" cy="42" r="5" fill="#222"/><circle cx="60" cy="42" r="5" fill="#222"/>
+      <path d="M35 67c8 6 22 6 30 0" fill="none" stroke="#f4b400" stroke-width="5"/>
+    </svg><span>Linux</span>
+  </div>
+
+  <div class="tech-logo python">
+    <svg viewBox="0 0 100 100">
+      <path d="M49 12h16c10 0 15 5 15 15v12H48v8h-7c-10 0-15-5-15-15V27c0-10 6-15 16-15Z" fill="#3776ab"/>
+      <path d="M51 88H35c-10 0-15-5-15-15V61h32v-8h7c10 0 15 5 15 15v5c0 10-6 15-16 15Z" fill="#ffd343"/>
+      <circle cx="45" cy="25" r="3" fill="#fff"/><circle cx="55" cy="75" r="3" fill="#fff"/>
+    </svg><span>Python</span>
+  </div>
+</div>
+
 
 <nav>
     <div class="logo">SIVA<span>.DEVOPS</span></div>
@@ -282,7 +467,7 @@ footer{padding:28px 7%;text-align:center;color:#64748b;border-top:1px solid #111
     <div class="hero-grid">
         <div>
             <span class="badge">☁ AWS • DevOps • Cloud Automation</span>
-            <h1>V Siva <span class="gradient">Prasad</span></h1>
+            <h1>Siva <span class="gradient">Prasad</span></h1>
             <h2>Cloud & DevOps Engineer</h2>
             <p>
                 I build, automate and troubleshoot cloud infrastructure using AWS,
